@@ -9,15 +9,27 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var etiqueta: UILabel!
+    
+    //Outlets
+    @IBOutlet weak var myButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        etiqueta.text = "Hola Agustinnnn"
+        
+        //buttons
+        myButton.setTitle("Mi Botón", for: .normal)
+        myButton.backgroundColor = .blue
+        myButton.setTitleColor(.white, for: .normal)
     }
 
-    @IBAction func cambiarTexto(_ sender: Any) {
-        etiqueta.text = "Chauuu mundo cruel"
-    }
+    //actions
     
+    @IBAction func myButtonAction(_ sender: Any) {
+        if myButton.backgroundColor == .blue {
+            myButton.backgroundColor = .red
+        } else {
+            myButton.backgroundColor = .blue
+        }
+    }
 }
 

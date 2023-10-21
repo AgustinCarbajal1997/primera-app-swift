@@ -17,27 +17,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hola mundo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmR-Eo-IJl">
-                                <rect key="frame" x="141.66666666666666" y="403.66666666666669" width="92" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bib-jH-uRd">
-                                <rect key="frame" x="122" y="644" width="131" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oga-XU-MT5">
+                                <rect key="frame" x="20" y="90" width="335" height="35"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Cambiar texto"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="myButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yEF-KY-iGo"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="wmR-Eo-IJl" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="TZK-qN-Vk6"/>
-                            <constraint firstItem="bib-jH-uRd" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ZD5-H9-p9X"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bib-jH-uRd" secondAttribute="bottom" constant="99" id="bKD-aD-YRE"/>
-                            <constraint firstItem="wmR-Eo-IJl" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="pYL-Rs-s2i"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Oga-XU-MT5" secondAttribute="trailing" constant="20" id="FCX-kU-Fzg"/>
+                            <constraint firstItem="Oga-XU-MT5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Knu-4b-wlQ"/>
+                            <constraint firstItem="Oga-XU-MT5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="geu-cE-day"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myButton" destination="Oga-XU-MT5" id="QdA-IU-YCq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
