@@ -65,11 +65,19 @@
                                     <action selector="mySwitchAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="2Bp-3D-Es5"/>
                                 </connections>
                             </switch>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Wyl-PH-sMe">
+                                <rect key="frame" x="20" y="532" width="350" height="4"/>
+                            </progressView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="9p0-5N-zAy">
+                                <rect key="frame" x="185" y="192" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="z2j-gF-Nvw" secondAttribute="trailing" constant="20" id="1eI-2V-EnW"/>
+                            <constraint firstItem="Wyl-PH-sMe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5lM-UK-oRD"/>
+                            <constraint firstItem="Wyl-PH-sMe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="D5d-gu-LVM"/>
                             <constraint firstItem="SGv-N9-QI5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ETj-DK-Cuj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Oga-XU-MT5" secondAttribute="trailing" constant="20" id="FCX-kU-Fzg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fcs-OR-EZa" secondAttribute="trailing" constant="20" id="Gxq-09-AIZ"/>
@@ -79,21 +87,31 @@
                             <constraint firstItem="z2j-gF-Nvw" firstAttribute="top" secondItem="fcs-OR-EZa" secondAttribute="bottom" constant="20" id="Sne-Yo-eFY"/>
                             <constraint firstItem="SGv-N9-QI5" firstAttribute="top" secondItem="z2j-gF-Nvw" secondAttribute="bottom" constant="20" id="aiL-WH-p4M"/>
                             <constraint firstItem="1U3-fO-Hyg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="alC-B7-t22"/>
+                            <constraint firstItem="Wyl-PH-sMe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fhe-zr-EjI"/>
+                            <constraint firstItem="9p0-5N-zAy" firstAttribute="centerX" secondItem="1U3-fO-Hyg" secondAttribute="centerX" id="g4f-3N-smX"/>
                             <constraint firstItem="Oga-XU-MT5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="geu-cE-day"/>
                             <constraint firstItem="GeP-AM-ZHS" firstAttribute="top" secondItem="FEG-ix-mkd" secondAttribute="bottom" constant="20" id="hzQ-Lo-nXv"/>
+                            <constraint firstItem="9p0-5N-zAy" firstAttribute="centerY" secondItem="1U3-fO-Hyg" secondAttribute="centerY" id="k7R-cK-3VF"/>
                             <constraint firstItem="z2j-gF-Nvw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="lsd-Pn-KuM"/>
                             <constraint firstItem="1U3-fO-Hyg" firstAttribute="top" secondItem="Oga-XU-MT5" secondAttribute="bottom" constant="20" id="mES-YR-GBw"/>
+                            <constraint firstItem="9p0-5N-zAy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oFc-YC-rkd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Wyl-PH-sMe" secondAttribute="trailing" constant="20" id="oZG-dQ-Hxe"/>
+                            <constraint firstItem="Wyl-PH-sMe" firstAttribute="top" secondItem="GeP-AM-ZHS" secondAttribute="bottom" constant="20" id="q9y-nV-wkN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SGv-N9-QI5" secondAttribute="trailing" constant="20" id="r74-Nz-83d"/>
                             <constraint firstItem="1U3-fO-Hyg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tHe-8l-lFC"/>
                             <constraint firstItem="FEG-ix-mkd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uU6-jV-V1O"/>
                             <constraint firstItem="FEG-ix-mkd" firstAttribute="top" secondItem="SGv-N9-QI5" secondAttribute="bottom" constant="20" id="vML-ik-ZVf"/>
                             <constraint firstItem="fcs-OR-EZa" firstAttribute="top" secondItem="1U3-fO-Hyg" secondAttribute="bottom" constant="20" id="wFv-WA-l0P"/>
+                            <constraint firstItem="Wyl-PH-sMe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="xrQ-q2-XwO"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="myActivityIndicator" destination="9p0-5N-zAy" id="gGP-IP-BnI"/>
                         <outlet property="myButton" destination="Oga-XU-MT5" id="QdA-IU-YCq"/>
+                        <outlet property="myLoaderView" destination="1U3-fO-Hyg" id="Qqc-KR-4fY"/>
                         <outlet property="myPageControl" destination="fcs-OR-EZa" id="oU7-SO-rXU"/>
                         <outlet property="myPicker" destination="1U3-fO-Hyg" id="LXa-JC-1B2"/>
+                        <outlet property="myProgressView" destination="Wyl-PH-sMe" id="cnb-Zc-Nnx"/>
                         <outlet property="mySegmentedControl" destination="z2j-gF-Nvw" id="8cB-HH-Xtx"/>
                         <outlet property="mySlider" destination="SGv-N9-QI5" id="Rf4-a4-xsi"/>
                         <outlet property="myStepper" destination="FEG-ix-mkd" id="dZz-Fj-jg3"/>
@@ -102,7 +120,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="54.198473282442748" y="-34.507042253521128"/>
+            <point key="canvasLocation" x="53.846153846153847" y="-34.834123222748815"/>
         </scene>
     </scenes>
     <resources>
