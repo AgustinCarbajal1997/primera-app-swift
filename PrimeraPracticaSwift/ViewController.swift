@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var myButton: UIButton!
     @IBOutlet weak var myPicker: UIPickerView!
     @IBOutlet weak var myPageControl: UIPageControl!
+    @IBOutlet weak var mySegmentedControl: UISegmentedControl!
     
     //variables
     private let myPickerViewValues = ["Uno", "Dos", "tres", "cuatro", "cinco"]
@@ -37,6 +38,16 @@ class ViewController: UIViewController {
         myPageControl.currentPageIndicatorTintColor = .red
         myPageControl.pageIndicatorTintColor = .lightGray
         
+        //segmented controls
+        //usamos enuramated porque me devuelve el index y tambien el elemento
+        //antes de que se ejecute la carga necesitamos borrar los que trae por defecto el segmento, para eso utilizamos la funcion removeAll
+        mySegmentedControl.removeAllSegments()
+        for (index, value) in myPickerViewValues.enumerated() {
+            //en cada vuelta del bucle insetamos un elemento
+            mySegmentedControl.insertSegment(withTitle: value, at: index, animated: true)
+        }
+        
+        
     }
 
     //actions
@@ -58,6 +69,16 @@ class ViewController: UIViewController {
         let myString = myPickerViewValues[myPageControl.currentPage]
         myButton.setTitle(myString, for: .normal)
     }
+    
+    //segmented control
+    
+    @IBAction func mySegmentedControlAction(_ sender: Any) {
+        myPicker.selectRow(mySegmentedControl.selectedSegmentIndex, inComponent: 0, animated: true)
+        let myString = myPickerViewValues[mySegmentedControl.selectedSegmentIndex]
+        myButton.setTitle(myString, for: .normal)
+        myPageControl.currentPage = mySegmentedControl.selectedSegmentIndex
+    }
+    
 }
 
 //son los dos protocolos que queremos delegar sobre ViewController
@@ -93,5 +114,6 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate{
             
         //entonces cada vez que modifica el selected row, se modifica tambien el myPageControl
         myPageControl.currentPage = row
+        mySegmentedControl.selectedSegmentIndex = row
     }
 }

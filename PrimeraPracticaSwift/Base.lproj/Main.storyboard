@@ -37,16 +37,29 @@
                                     <action selector="myPageControlAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="Uru-8v-zhx"/>
                                 </connections>
                             </pageControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="z2j-gF-Nvw">
+                                <rect key="frame" x="20" y="328" width="350" height="32"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <connections>
+                                    <action selector="mySegmentedControlAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="L2p-r7-lfa"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="z2j-gF-Nvw" secondAttribute="trailing" constant="20" id="1eI-2V-EnW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Oga-XU-MT5" secondAttribute="trailing" constant="20" id="FCX-kU-Fzg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fcs-OR-EZa" secondAttribute="trailing" constant="20" id="Gxq-09-AIZ"/>
                             <constraint firstItem="Oga-XU-MT5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Knu-4b-wlQ"/>
                             <constraint firstItem="fcs-OR-EZa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="RFI-XW-E3C"/>
+                            <constraint firstItem="z2j-gF-Nvw" firstAttribute="top" secondItem="fcs-OR-EZa" secondAttribute="bottom" constant="20" id="Sne-Yo-eFY"/>
                             <constraint firstItem="1U3-fO-Hyg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="alC-B7-t22"/>
                             <constraint firstItem="Oga-XU-MT5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="geu-cE-day"/>
+                            <constraint firstItem="z2j-gF-Nvw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="lsd-Pn-KuM"/>
                             <constraint firstItem="1U3-fO-Hyg" firstAttribute="top" secondItem="Oga-XU-MT5" secondAttribute="bottom" constant="20" id="mES-YR-GBw"/>
                             <constraint firstItem="1U3-fO-Hyg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tHe-8l-lFC"/>
                             <constraint firstItem="fcs-OR-EZa" firstAttribute="top" secondItem="1U3-fO-Hyg" secondAttribute="bottom" constant="20" id="wFv-WA-l0P"/>
@@ -56,6 +69,7 @@
                         <outlet property="myButton" destination="Oga-XU-MT5" id="QdA-IU-YCq"/>
                         <outlet property="myPageControl" destination="fcs-OR-EZa" id="oU7-SO-rXU"/>
                         <outlet property="myPicker" destination="1U3-fO-Hyg" id="LXa-JC-1B2"/>
+                        <outlet property="mySegmentedControl" destination="z2j-gF-Nvw" id="8cB-HH-Xtx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
