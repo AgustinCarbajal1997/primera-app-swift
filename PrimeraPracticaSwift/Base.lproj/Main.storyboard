@@ -53,6 +53,12 @@
                                     <action selector="mySliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="lAz-pM-r2j"/>
                                 </connections>
                             </slider>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="FEG-ix-mkd">
+                                <rect key="frame" x="148" y="429" width="94" height="32"/>
+                                <connections>
+                                    <action selector="myStepperAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="qrR-5c-W6t"/>
+                                </connections>
+                            </stepper>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -71,6 +77,8 @@
                             <constraint firstItem="1U3-fO-Hyg" firstAttribute="top" secondItem="Oga-XU-MT5" secondAttribute="bottom" constant="20" id="mES-YR-GBw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SGv-N9-QI5" secondAttribute="trailing" constant="20" id="r74-Nz-83d"/>
                             <constraint firstItem="1U3-fO-Hyg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tHe-8l-lFC"/>
+                            <constraint firstItem="FEG-ix-mkd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uU6-jV-V1O"/>
+                            <constraint firstItem="FEG-ix-mkd" firstAttribute="top" secondItem="SGv-N9-QI5" secondAttribute="bottom" constant="20" id="vML-ik-ZVf"/>
                             <constraint firstItem="fcs-OR-EZa" firstAttribute="top" secondItem="1U3-fO-Hyg" secondAttribute="bottom" constant="20" id="wFv-WA-l0P"/>
                         </constraints>
                     </view>
@@ -80,6 +88,7 @@
                         <outlet property="myPicker" destination="1U3-fO-Hyg" id="LXa-JC-1B2"/>
                         <outlet property="mySegmentedControl" destination="z2j-gF-Nvw" id="8cB-HH-Xtx"/>
                         <outlet property="mySlider" destination="SGv-N9-QI5" id="Rf4-a4-xsi"/>
+                        <outlet property="myStepper" destination="FEG-ix-mkd" id="dZz-Fj-jg3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

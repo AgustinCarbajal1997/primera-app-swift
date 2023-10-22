@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var myPageControl: UIPageControl!
     @IBOutlet weak var mySegmentedControl: UISegmentedControl!
     @IBOutlet weak var mySlider: UISlider!
+    @IBOutlet weak var myStepper: UIStepper!
     
     //variables
     private let myPickerViewValues = ["Uno", "Dos", "tres", "cuatro", "cinco"]
@@ -56,6 +57,10 @@ class ViewController: UIViewController {
         mySlider.minimumValue = 1
         mySlider.maximumValue = Float(myPickerViewValues.count)
         mySlider.value = 1
+        
+        //stepper
+        myStepper.value = 1
+        myStepper.maximumValue = Double(myPickerViewValues.count)
         
     }
 
@@ -124,6 +129,12 @@ class ViewController: UIViewController {
             myPageControl.currentPage = 4
             mySegmentedControl.selectedSegmentIndex = 4
         }
+    }
+    
+    
+    @IBAction func myStepperAction(_ sender: Any) {
+        let value = myStepper.value
+        mySlider.value = Float(myStepper.value)
     }
     
 }
