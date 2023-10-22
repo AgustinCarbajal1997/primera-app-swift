@@ -9,12 +9,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // todos los controles deberian de UI control (superclase), osea de UIkit (superclase comun para UI control)
+    
     
     //Outlets
     @IBOutlet weak var myButton: UIButton!
     @IBOutlet weak var myPicker: UIPickerView!
     @IBOutlet weak var myPageControl: UIPageControl!
     @IBOutlet weak var mySegmentedControl: UISegmentedControl!
+    @IBOutlet weak var mySlider: UISlider!
     
     //variables
     private let myPickerViewValues = ["Uno", "Dos", "tres", "cuatro", "cinco"]
@@ -48,6 +51,12 @@ class ViewController: UIViewController {
         }
         
         
+        //slider controls (por ej para reproductores de musica)
+        mySlider.maximumTrackTintColor = .green
+        mySlider.minimumValue = 1
+        mySlider.maximumValue = Float(myPickerViewValues.count)
+        mySlider.value = 1
+        
     }
 
     //actions
@@ -68,6 +77,8 @@ class ViewController: UIViewController {
         myPicker.selectRow(myPageControl.currentPage, inComponent: 0, animated: true)
         let myString = myPickerViewValues[myPageControl.currentPage]
         myButton.setTitle(myString, for: .normal)
+        mySlider.value = Float(myPageControl.currentPage + 1)
+        mySegmentedControl.selectedSegmentIndex = myPageControl.currentPage
     }
     
     //segmented control
@@ -77,6 +88,42 @@ class ViewController: UIViewController {
         let myString = myPickerViewValues[mySegmentedControl.selectedSegmentIndex]
         myButton.setTitle(myString, for: .normal)
         myPageControl.currentPage = mySegmentedControl.selectedSegmentIndex
+        mySlider.value = Float(mySegmentedControl.selectedSegmentIndex + 1)
+    }
+    
+    @IBAction func mySliderAction(_ sender: Any) {
+        switch mySlider.value {
+        case 1..<2:
+            let myString = myPickerViewValues[0]
+            myButton.setTitle(myString, for: .normal)
+            myPicker.selectRow(0, inComponent: 0, animated: true)
+            myPageControl.currentPage = 0
+            mySegmentedControl.selectedSegmentIndex = 0
+        case 2..<3:
+            let myString = myPickerViewValues[1]
+            myButton.setTitle(myString, for: .normal)
+            myPicker.selectRow(1, inComponent: 0, animated: true)
+            myPageControl.currentPage = 1
+            mySegmentedControl.selectedSegmentIndex = 1
+        case 3..<4:
+            let myString = myPickerViewValues[2]
+            myButton.setTitle(myString, for: .normal)
+            myPicker.selectRow(2, inComponent: 0, animated: true)
+            myPageControl.currentPage = 2
+            mySegmentedControl.selectedSegmentIndex = 2
+        case 4..<5:
+            let myString = myPickerViewValues[3]
+            myButton.setTitle(myString, for: .normal)
+            myPicker.selectRow(3, inComponent: 0, animated: true)
+            myPageControl.currentPage = 3
+            mySegmentedControl.selectedSegmentIndex = 3
+        default:
+            let myString = myPickerViewValues[4]
+            myButton.setTitle(myString, for: .normal)
+            myPicker.selectRow(4, inComponent: 0, animated: true)
+            myPageControl.currentPage = 4
+            mySegmentedControl.selectedSegmentIndex = 4
+        }
     }
     
 }
@@ -115,5 +162,6 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate{
         //entonces cada vez que modifica el selected row, se modifica tambien el myPageControl
         myPageControl.currentPage = row
         mySegmentedControl.selectedSegmentIndex = row
+        mySlider.value = Float(row + 1)
     }
 }

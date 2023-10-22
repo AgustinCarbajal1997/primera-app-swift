@@ -47,20 +47,29 @@
                                     <action selector="mySegmentedControlAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="L2p-r7-lfa"/>
                                 </connections>
                             </segmentedControl>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="SGv-N9-QI5">
+                                <rect key="frame" x="18" y="379" width="354" height="31"/>
+                                <connections>
+                                    <action selector="mySliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="lAz-pM-r2j"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="z2j-gF-Nvw" secondAttribute="trailing" constant="20" id="1eI-2V-EnW"/>
+                            <constraint firstItem="SGv-N9-QI5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ETj-DK-Cuj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Oga-XU-MT5" secondAttribute="trailing" constant="20" id="FCX-kU-Fzg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fcs-OR-EZa" secondAttribute="trailing" constant="20" id="Gxq-09-AIZ"/>
                             <constraint firstItem="Oga-XU-MT5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Knu-4b-wlQ"/>
                             <constraint firstItem="fcs-OR-EZa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="RFI-XW-E3C"/>
                             <constraint firstItem="z2j-gF-Nvw" firstAttribute="top" secondItem="fcs-OR-EZa" secondAttribute="bottom" constant="20" id="Sne-Yo-eFY"/>
+                            <constraint firstItem="SGv-N9-QI5" firstAttribute="top" secondItem="z2j-gF-Nvw" secondAttribute="bottom" constant="20" id="aiL-WH-p4M"/>
                             <constraint firstItem="1U3-fO-Hyg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="alC-B7-t22"/>
                             <constraint firstItem="Oga-XU-MT5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="geu-cE-day"/>
                             <constraint firstItem="z2j-gF-Nvw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="lsd-Pn-KuM"/>
                             <constraint firstItem="1U3-fO-Hyg" firstAttribute="top" secondItem="Oga-XU-MT5" secondAttribute="bottom" constant="20" id="mES-YR-GBw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SGv-N9-QI5" secondAttribute="trailing" constant="20" id="r74-Nz-83d"/>
                             <constraint firstItem="1U3-fO-Hyg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tHe-8l-lFC"/>
                             <constraint firstItem="fcs-OR-EZa" firstAttribute="top" secondItem="1U3-fO-Hyg" secondAttribute="bottom" constant="20" id="wFv-WA-l0P"/>
                         </constraints>
@@ -70,6 +79,7 @@
                         <outlet property="myPageControl" destination="fcs-OR-EZa" id="oU7-SO-rXU"/>
                         <outlet property="myPicker" destination="1U3-fO-Hyg" id="LXa-JC-1B2"/>
                         <outlet property="mySegmentedControl" destination="z2j-gF-Nvw" id="8cB-HH-Xtx"/>
+                        <outlet property="mySlider" destination="SGv-N9-QI5" id="Rf4-a4-xsi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
