@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var mySegmentedControl: UISegmentedControl!
     @IBOutlet weak var mySlider: UISlider!
     @IBOutlet weak var myStepper: UIStepper!
+    @IBOutlet weak var mySwitch: UISwitch!
     
     //variables
     private let myPickerViewValues = ["Uno", "Dos", "tres", "cuatro", "cinco"]
@@ -36,7 +37,7 @@ class ViewController: UIViewController {
         // para poder hacer el data source y el delegate vamos a necesitar extender con "extension", para separa nuetro codigo
         myPicker.dataSource = self //le estamos indicando que clase se va a encargar de proporcionar los elementos y le decimos que la propia, osea el propio viewcontroller. Implementamos su protocolo, el cual nos va a ayudar a cargarle datos
         myPicker.delegate = self // sobre quien queremos crear el delegado, sobre el view controller
-        
+        myPicker.isHidden = true
         //page controls
         myPageControl.numberOfPages = myPickerViewValues.count
         myPageControl.currentPageIndicatorTintColor = .red
@@ -61,6 +62,10 @@ class ViewController: UIViewController {
         //stepper
         myStepper.value = 1
         myStepper.maximumValue = Double(myPickerViewValues.count)
+        
+        //switch
+        mySwitch.onTintColor = .red
+        mySwitch.isOn = false
         
     }
 
@@ -96,6 +101,7 @@ class ViewController: UIViewController {
         mySlider.value = Float(mySegmentedControl.selectedSegmentIndex + 1)
     }
     
+    //slider
     @IBAction func mySliderAction(_ sender: Any) {
         switch mySlider.value {
         case 1..<2:
@@ -131,11 +137,22 @@ class ViewController: UIViewController {
         }
     }
     
-    
+    //stepper
     @IBAction func myStepperAction(_ sender: Any) {
         let value = myStepper.value
         mySlider.value = Float(myStepper.value)
     }
+    
+    //switch
+    
+    @IBAction func mySwitchAction(_ sender: Any) {
+        if mySwitch.isOn {
+            myPicker.isHidden = false
+        }else{
+            myPicker.isHidden = true
+        }
+    }
+    
     
 }
 
