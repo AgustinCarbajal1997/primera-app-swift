@@ -9,12 +9,24 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // todos los controles deberian de UI control (superclase), osea de UIkit (superclase comun para UI control)
+    
     
     //Outlets
     @IBOutlet weak var myButton: UIButton!
     @IBOutlet weak var myPicker: UIPickerView!
     @IBOutlet weak var myPageControl: UIPageControl!
     @IBOutlet weak var mySegmentedControl: UISegmentedControl!
+    @IBOutlet weak var mySlider: UISlider!
+    @IBOutlet weak var myStepper: UIStepper!
+    @IBOutlet weak var mySwitch: UISwitch!
+    @IBOutlet weak var myLoaderView: UIPickerView!
+    @IBOutlet weak var myProgressView: UIProgressView!
+    @IBOutlet weak var myActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var myStepperLabel: UILabel!
+    @IBOutlet weak var mySwitchLabel: UILabel!
+    @IBOutlet weak var myTextField: UITextField!
+    @IBOutlet weak var myTextView: UITextView!
     
     //variables
     private let myPickerViewValues = ["Uno", "Dos", "tres", "cuatro", "cinco"]
@@ -32,7 +44,7 @@ class ViewController: UIViewController {
         // para poder hacer el data source y el delegate vamos a necesitar extender con "extension", para separa nuetro codigo
         myPicker.dataSource = self //le estamos indicando que clase se va a encargar de proporcionar los elementos y le decimos que la propia, osea el propio viewcontroller. Implementamos su protocolo, el cual nos va a ayudar a cargarle datos
         myPicker.delegate = self // sobre quien queremos crear el delegado, sobre el view controller
-        
+        myPicker.isHidden = true
         //page controls
         myPageControl.numberOfPages = myPickerViewValues.count
         myPageControl.currentPageIndicatorTintColor = .red
@@ -48,6 +60,43 @@ class ViewController: UIViewController {
         }
         
         
+        //slider controls (por ej para reproductores de musica)
+        mySlider.maximumTrackTintColor = .green
+        mySlider.minimumValue = 1
+        mySlider.maximumValue = Float(myPickerViewValues.count)
+        mySlider.value = 1
+        
+        //stepper
+        myStepper.value = 1
+        myStepper.maximumValue = Double(myPickerViewValues.count)
+        
+        //switch
+        mySwitch.onTintColor = .red
+        mySwitch.isOn = false
+        
+        //progress indicators
+        myProgressView.progress = 0
+        
+        //activity indicator
+        myActivityIndicator.color = .red
+        myActivityIndicator.startAnimating()
+        myActivityIndicator.hidesWhenStopped = true
+        
+        //labels
+        myStepperLabel.textColor = .red
+        myStepperLabel.font = UIFont.boldSystemFont(ofSize: 36)
+        myStepperLabel.text = "1"
+        
+        mySwitchLabel.text = "Está apagado"
+        
+        //textfield
+        myTextField.textColor = .blue
+        myTextField.placeholder = "Escribe algo"
+        myTextField.delegate = self
+        
+        //textview
+        myTextView.textColor = .red
+        myTextView.delegate = self
     }
 
     //actions
@@ -59,6 +108,7 @@ class ViewController: UIViewController {
         } else {
             myButton.backgroundColor = .blue
         }
+        myTextView.resignFirstResponder()
     }
     
     //pageControls
@@ -68,6 +118,8 @@ class ViewController: UIViewController {
         myPicker.selectRow(myPageControl.currentPage, inComponent: 0, animated: true)
         let myString = myPickerViewValues[myPageControl.currentPage]
         myButton.setTitle(myString, for: .normal)
+        mySlider.value = Float(myPageControl.currentPage + 1)
+        mySegmentedControl.selectedSegmentIndex = myPageControl.currentPage
     }
     
     //segmented control
@@ -77,8 +129,96 @@ class ViewController: UIViewController {
         let myString = myPickerViewValues[mySegmentedControl.selectedSegmentIndex]
         myButton.setTitle(myString, for: .normal)
         myPageControl.currentPage = mySegmentedControl.selectedSegmentIndex
+        mySlider.value = Float(mySegmentedControl.selectedSegmentIndex + 1)
     }
     
+    //slider
+    @IBAction func mySliderAction(_ sender: Any) {
+        
+        var progress: Float = 0
+        
+        switch mySlider.value {
+        case 1..<2:
+            let myString = myPickerViewValues[0]
+            myButton.setTitle(myString, for: .normal)
+            myPicker.selectRow(0, inComponent: 0, animated: true)
+            myPageControl.currentPage = 0
+            mySegmentedControl.selectedSegmentIndex = 0
+            progress = 0.2
+        case 2..<3:
+            let myString = myPickerViewValues[1]
+            myButton.setTitle(myString, for: .normal)
+            myPicker.selectRow(1, inComponent: 0, animated: true)
+            myPageControl.currentPage = 1
+            mySegmentedControl.selectedSegmentIndex = 1
+            progress = 0.4
+        case 3..<4:
+            let myString = myPickerViewValues[2]
+            myButton.setTitle(myString, for: .normal)
+            myPicker.selectRow(2, inComponent: 0, animated: true)
+            myPageControl.currentPage = 2
+            mySegmentedControl.selectedSegmentIndex = 2
+            progress = 0.6
+        case 4..<5:
+            let myString = myPickerViewValues[3]
+            myButton.setTitle(myString, for: .normal)
+            myPicker.selectRow(3, inComponent: 0, animated: true)
+            myPageControl.currentPage = 3
+            mySegmentedControl.selectedSegmentIndex = 3
+            progress = 0.8
+        default:
+            let myString = myPickerViewValues[4]
+            myButton.setTitle(myString, for: .normal)
+            myPicker.selectRow(4, inComponent: 0, animated: true)
+            myPageControl.currentPage = 4
+            mySegmentedControl.selectedSegmentIndex = 4
+            progress = 1
+        }
+        myProgressView.progress = progress
+    }
+    
+    //stepper
+    @IBAction func myStepperAction(_ sender: Any) {
+        let value = myStepper.value
+        mySlider.value = Float(value)
+        myStepperLabel.text = "\(value)"
+    }
+    
+    //switch
+    
+    @IBAction func mySwitchAction(_ sender: Any) {
+        if mySwitch.isOn {
+            myPicker.isHidden = false
+            myActivityIndicator.stopAnimating()
+            mySwitchLabel.text = "Está encendido"
+        }else{
+            myPicker.isHidden = true
+            myActivityIndicator.startAnimating()
+            mySwitchLabel.text = "Está apagado"
+        }
+    }
+    
+    
+}
+
+//delegate TextField
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        myButton.setTitle(myTextField.text, for: .normal)
+    }
+}
+
+//delegate TExt view
+extension ViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        myTextField.isHidden = true
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        myTextField.isHidden = false
+    }
 }
 
 //son los dos protocolos que queremos delegar sobre ViewController
@@ -115,5 +255,6 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate{
         //entonces cada vez que modifica el selected row, se modifica tambien el myPageControl
         myPageControl.currentPage = row
         mySegmentedControl.selectedSegmentIndex = row
+        mySlider.value = Float(row + 1)
     }
 }
