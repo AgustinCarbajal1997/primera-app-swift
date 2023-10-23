@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var myStepperLabel: UILabel!
     @IBOutlet weak var mySwitchLabel: UILabel!
     @IBOutlet weak var myTextField: UITextField!
+    @IBOutlet weak var myTextView: UITextView!
     
     //variables
     private let myPickerViewValues = ["Uno", "Dos", "tres", "cuatro", "cinco"]
@@ -92,6 +93,10 @@ class ViewController: UIViewController {
         myTextField.textColor = .blue
         myTextField.placeholder = "Escribe algo"
         myTextField.delegate = self
+        
+        //textview
+        myTextView.textColor = .red
+        myTextView.delegate = self
     }
 
     //actions
@@ -103,6 +108,7 @@ class ViewController: UIViewController {
         } else {
             myButton.backgroundColor = .blue
         }
+        myTextView.resignFirstResponder()
     }
     
     //pageControls
@@ -202,6 +208,16 @@ extension ViewController: UITextFieldDelegate {
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
         myButton.setTitle(myTextField.text, for: .normal)
+    }
+}
+
+//delegate TExt view
+extension ViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        myTextField.isHidden = true
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        myTextField.isHidden = false
     }
 }
 

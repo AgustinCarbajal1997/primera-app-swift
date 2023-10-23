@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oga-XU-MT5">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oga-XU-MT5">
                                 <rect key="frame" x="20" y="87" width="350" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
@@ -25,19 +25,19 @@
                                     <action selector="myButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yEF-KY-iGo"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1U3-fO-Hyg">
+                            <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1U3-fO-Hyg">
                                 <rect key="frame" x="0.0" y="142" width="390" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="c8A-3e-7Kq"/>
                                 </constraints>
                             </pickerView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="fcs-OR-EZa">
+                            <pageControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="fcs-OR-EZa">
                                 <rect key="frame" x="20" y="282" width="350" height="26"/>
                                 <connections>
                                     <action selector="myPageControlAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="Uru-8v-zhx"/>
                                 </connections>
                             </pageControl>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="z2j-gF-Nvw">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="z2j-gF-Nvw">
                                 <rect key="frame" x="20" y="328" width="350" height="32"/>
                                 <segments>
                                     <segment title="First"/>
@@ -47,67 +47,83 @@
                                     <action selector="mySegmentedControlAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="L2p-r7-lfa"/>
                                 </connections>
                             </segmentedControl>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="SGv-N9-QI5">
+                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="SGv-N9-QI5">
                                 <rect key="frame" x="18" y="379" width="354" height="31"/>
                                 <connections>
                                     <action selector="mySliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="lAz-pM-r2j"/>
                                 </connections>
                             </slider>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="FEG-ix-mkd">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="FEG-ix-mkd">
                                 <rect key="frame" x="148" y="423.33333333333331" width="94" height="32"/>
                                 <connections>
                                     <action selector="myStepperAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="qrR-5c-W6t"/>
                                 </connections>
                             </stepper>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GeP-AM-ZHS">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GeP-AM-ZHS">
                                 <rect key="frame" x="170.66666666666666" y="475.33333333333331" width="51" height="31"/>
                                 <connections>
                                     <action selector="mySwitchAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="2Bp-3D-Es5"/>
                                 </connections>
                             </switch>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Wyl-PH-sMe">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Wyl-PH-sMe">
                                 <rect key="frame" x="20" y="526.33333333333337" width="350" height="4"/>
                             </progressView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="9p0-5N-zAy">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="9p0-5N-zAy">
                                 <rect key="frame" x="185" y="192" width="20" height="20"/>
                             </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5l2-wv-D0X">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5l2-wv-D0X">
                                 <rect key="frame" x="20" y="429" width="350" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKu-VN-4Xo">
-                                <rect key="frame" x="109.33333333333333" y="469.33333333333331" width="41.333333333333329" height="20.333333333333314"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKu-VN-4Xo">
+                                <rect key="frame" x="109.33333333333333" y="469.33333333333337" width="41.333333333333329" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IzY-TU-3jn">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IzY-TU-3jn">
                                 <rect key="frame" x="20" y="550.33333333333337" width="350" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SyM-yQ-vh7">
+                                <rect key="frame" x="20" y="604" width="350" height="112"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="112" id="Xua-uT-iSS"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="z2j-gF-Nvw" secondAttribute="trailing" constant="20" id="1eI-2V-EnW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5l2-wv-D0X" secondAttribute="trailing" constant="20" id="3YQ-xM-JQa"/>
+                            <constraint firstItem="SyM-yQ-vh7" firstAttribute="top" secondItem="IzY-TU-3jn" secondAttribute="bottom" constant="19.666666666666629" id="5Um-Yv-zXN"/>
                             <constraint firstItem="Wyl-PH-sMe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5lM-UK-oRD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SyM-yQ-vh7" secondAttribute="bottom" constant="94" id="AQS-5K-Zlf"/>
                             <constraint firstItem="Wyl-PH-sMe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="D5d-gu-LVM"/>
                             <constraint firstItem="SGv-N9-QI5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ETj-DK-Cuj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Oga-XU-MT5" secondAttribute="trailing" constant="20" id="FCX-kU-Fzg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fcs-OR-EZa" secondAttribute="trailing" constant="20" id="Gxq-09-AIZ"/>
+                            <constraint firstItem="eKu-VN-4Xo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="109.33333333333333" id="Ifn-L8-IXY"/>
                             <constraint firstItem="Oga-XU-MT5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Knu-4b-wlQ"/>
                             <constraint firstItem="5l2-wv-D0X" firstAttribute="top" secondItem="SGv-N9-QI5" secondAttribute="bottom" constant="20" id="OWr-rh-VL9"/>
                             <constraint firstItem="IzY-TU-3jn" firstAttribute="top" secondItem="Wyl-PH-sMe" secondAttribute="bottom" constant="20" id="Pp1-J7-0O8"/>
                             <constraint firstItem="fcs-OR-EZa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="RFI-XW-E3C"/>
                             <constraint firstItem="GeP-AM-ZHS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RxI-Z3-wXf"/>
                             <constraint firstItem="z2j-gF-Nvw" firstAttribute="top" secondItem="fcs-OR-EZa" secondAttribute="bottom" constant="20" id="Sne-Yo-eFY"/>
-                            <constraint firstItem="GeP-AM-ZHS" firstAttribute="leading" secondItem="eKu-VN-4Xo" secondAttribute="trailing" constant="20" id="VRQ-t4-RJV"/>
+                            <constraint firstItem="GeP-AM-ZHS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eKu-VN-4Xo" secondAttribute="trailing" symbolic="YES" id="VRQ-t4-RJV"/>
+                            <constraint firstItem="SyM-yQ-vh7" firstAttribute="leading" secondItem="IzY-TU-3jn" secondAttribute="leading" id="W3C-vV-IUA"/>
                             <constraint firstItem="SGv-N9-QI5" firstAttribute="top" secondItem="z2j-gF-Nvw" secondAttribute="bottom" constant="20" id="aiL-WH-p4M"/>
                             <constraint firstItem="1U3-fO-Hyg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="alC-B7-t22"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SyM-yQ-vh7" secondAttribute="trailing" constant="20" id="axd-wr-fcR"/>
                             <constraint firstItem="FEG-ix-mkd" firstAttribute="centerX" secondItem="5l2-wv-D0X" secondAttribute="centerX" id="bic-rI-OKA"/>
                             <constraint firstItem="GeP-AM-ZHS" firstAttribute="top" secondItem="FEG-ix-mkd" secondAttribute="bottom" constant="20" id="eHp-iM-G31"/>
                             <constraint firstItem="eKu-VN-4Xo" firstAttribute="top" secondItem="5l2-wv-D0X" secondAttribute="bottom" constant="20" id="eTu-CZ-MVp"/>
@@ -147,6 +163,7 @@
                         <outlet property="mySwitch" destination="GeP-AM-ZHS" id="gG6-7r-Yhp"/>
                         <outlet property="mySwitchLabel" destination="eKu-VN-4Xo" id="ss3-es-nia"/>
                         <outlet property="myTextField" destination="IzY-TU-3jn" id="led-Kx-vMm"/>
+                        <outlet property="myTextView" destination="SyM-yQ-vh7" id="PTM-zR-U3q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -155,6 +172,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
