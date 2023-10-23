@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var myActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var myStepperLabel: UILabel!
     @IBOutlet weak var mySwitchLabel: UILabel!
-    
+    @IBOutlet weak var myTextField: UITextField!
     
     //variables
     private let myPickerViewValues = ["Uno", "Dos", "tres", "cuatro", "cinco"]
@@ -87,6 +87,11 @@ class ViewController: UIViewController {
         myStepperLabel.text = "1"
         
         mySwitchLabel.text = "Está apagado"
+        
+        //textfield
+        myTextField.textColor = .blue
+        myTextField.placeholder = "Escribe algo"
+        myTextField.delegate = self
     }
 
     //actions
@@ -188,6 +193,16 @@ class ViewController: UIViewController {
     }
     
     
+}
+
+//delegate TextField
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        myButton.setTitle(myTextField.text, for: .normal)
+    }
 }
 
 //son los dos protocolos que queremos delegar sobre ViewController
