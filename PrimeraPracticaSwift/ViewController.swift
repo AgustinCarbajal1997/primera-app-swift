@@ -23,6 +23,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var myLoaderView: UIPickerView!
     @IBOutlet weak var myProgressView: UIProgressView!
     @IBOutlet weak var myActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var myStepperLabel: UILabel!
+    @IBOutlet weak var mySwitchLabel: UILabel!
+    
     
     //variables
     private let myPickerViewValues = ["Uno", "Dos", "tres", "cuatro", "cinco"]
@@ -78,6 +81,12 @@ class ViewController: UIViewController {
         myActivityIndicator.startAnimating()
         myActivityIndicator.hidesWhenStopped = true
         
+        //labels
+        myStepperLabel.textColor = .red
+        myStepperLabel.font = UIFont.boldSystemFont(ofSize: 36)
+        myStepperLabel.text = "1"
+        
+        mySwitchLabel.text = "Está apagado"
     }
 
     //actions
@@ -159,8 +168,9 @@ class ViewController: UIViewController {
     
     //stepper
     @IBAction func myStepperAction(_ sender: Any) {
-        _ = myStepper.value
-        mySlider.value = Float(myStepper.value)
+        let value = myStepper.value
+        mySlider.value = Float(value)
+        myStepperLabel.text = "\(value)"
     }
     
     //switch
@@ -169,9 +179,11 @@ class ViewController: UIViewController {
         if mySwitch.isOn {
             myPicker.isHidden = false
             myActivityIndicator.stopAnimating()
+            mySwitchLabel.text = "Está encendido"
         }else{
             myPicker.isHidden = true
             myActivityIndicator.startAnimating()
+            mySwitchLabel.text = "Está apagado"
         }
     }
     
